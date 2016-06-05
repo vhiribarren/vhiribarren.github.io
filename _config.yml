@@ -18,9 +18,6 @@ kramdown:
 
 highlighter: rouge
 
-gems:
-  - jekyll-feed
-
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
@@ -28,5 +25,14 @@ defaults:
     values:
       layout: "post"
       author: "Vincent Hiribarren"
-      category: posts
+      category: post
       permalink: /:categories/:year/:month/:title/
+
+gems:
+  - jekyll-feed
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+      - tags
+  layout: 'archive'
