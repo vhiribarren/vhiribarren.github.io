@@ -16,4 +16,14 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-highlighter: pygments
+highlighter: rouge
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Vincent Hiribarren"
+      category: posts
+      permalink: /:categories/:year/:month/:title/
