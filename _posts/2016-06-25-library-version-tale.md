@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A library version tale with Node.js: set exact library versions"
+title: "A Library Version Tale with Node.js: Set Exact Library Versions"
 tags:
   - nodejs
   - software-engineering
@@ -20,7 +20,7 @@ dependency of which I lost control.
 * This will become a table of contents (this text will be scraped).
 {:toc}
 
-## A new feature
+## A New Feature
 
 I work on some code actually deployed in production. I manage several
 environments (let's restrain to production and preproduction) with automation
@@ -47,7 +47,7 @@ troubles.
 Fortunately, I have the means to do a quick rollup, so the previous version was
 immediately restored.
 
-## Searching for the bug
+## Searching for the Bug
 
 I had logs. Good practices for production. The code I added was so simple and
 minimal that I could not understand how it could have so drastically changed the
@@ -79,7 +79,7 @@ I finally had the intuition of checking the commit logs on GitHub of
 - the library was updated 2 times while I was doing my production deployment and
   my tests
 
-## The explanation
+## The Explanation
 
 If we add the timeline of the *awesome-library* evolution, the full timeline
 view becomes:
@@ -100,42 +100,84 @@ While I was doing some tests on my code to find the bug, the maintainer of
 some of my tests (with the old AND new version of my app) were done with x.0.1
 and some others with x.0.2 it was difficult to understand what was happening.
 
-## Conclusion
-
-I would have avoid lots of headaches if the command I did at the beginning of
-the project was:
-
-    npm install awesome-library --save --save-exact
-
-In the case of Node.js, the `--save-exact` option freezes the library version.
-
-Without its use, the content of `package.json` is:
+How can that happen? When a `npm install --save` is done, the
+dependency is added in the file `package.json` using this notation:
 
     "dependencies": {
         "awesome-library": "^1.0.0"
     }
 
-According to `npm` documentation, it means that higher minor or patch numbers
-are allowed. Each time you do a fresh install with a fresh `npm install`
-command, `npm` downloads an updated version of the library. It can be noted that
-once `npm install` is executed, typing it once again does not update the already
-installed library - unless `npm update` is executed.
+According to [`npm` documentation][npm-dependencies-doc], the carret `^` means
+that higher minor or patch numbers are allowed. Each time you do a fresh install
+with a fresh `npm install` command, `npm` downloads an updated version of the
+library.
 
-When the `--save-exact` option is added, `package.json` becomes:
+Allowing an automatic upgrade for the patch number in a
+[SemVer][semver]-compatible library is not a good idea since a bug fix can also
+be a source of new bugs.
+
+It can be noted that once `npm install` is executed, typing it once again does
+not update the already installed library - unless `npm update` is executed.
+
+## Another Problem: Transitive Dependencies
+
+Worse: *awesome-library* can also define dependencies.
+
+We could try to avoid headaches by adding the `--save-exact` option to the `npm`
+command:
+
+    npm install awesome-library --save --save-exact
+
+When this option is added, `package.json` becomes:
 
     "dependencies": {
         "awesome-library": "1.0.0"
     }
 
-The caret disappears, and the library version is definitively set-up (unless
-the developer decides to change it).
+The caret disappears, and the library version is definitively set-up.
 
-Even allowing an automatic upgrade for the patch number in a
-[SemVer][semver]-compatible library is not a good idea since a bug fix can also
-be a source of new bugs.
+But what about the dependencies defined in the `package.json` of
+*awesome-library*? And what about the dependencies of those dependencies? This
+command does not freeze their version, they keep their `^`, so control about
+dependencies of dependencies is lost.
 
-A production environment must be as predictable as possible.
+And the nightmare continue.
+
+## Conclusion
+
+How this problem can be solved? There are generally 2 possibilities:
+
+1. all dependencies are distributed and committed with your project - in the
+  case of Node.JS it implies distributing the whole `node_modules` directory
+2. ... or we find a way to lock / freeze the version numbers of all the
+  dependencies and their sub-dependencies
+
+The second option is better, and actually some dependency tools for other
+programming languages do that by default.
+
+`npm` provides a [special command][shrinkwrap-doc] that can help:
+
+    npm shrinkwrap
+
+It generates a `npm-shrinkwrap.json` file that contains the hierarchy of all
+your dependencies and their version at the time you use the command.
+
+The process is simple:
+
+- dependencies are defined as usual in your `package.json`
+- when you are done with your tests on your machine, perform a `npm shrinkwrap`
+  that creates a `npm-shrinkwrap.json` file
+- commit this file and distribute it along your project
+- when someone else does a `npm install`, the library versions described in
+  `npm-shrinkwrap.json` are used
+- each time you add a dependency in `package.json` do not forget to update the
+  shrinkwrap file by doing `npm shrinkwrap`
+
+All the hierarchy of dependencies becomes known. A production environment must
+be as predictable as possible.
 
 [semver]: http://semver.org/
 [problem-timeline]: {{site.url}}/assets/posts/library-version-tale/problem-timeline.png
 [full-timeline]: {{site.url}}/assets/posts/library-version-tale/problem-timeline-full.png
+[npm-dependencies-doc]: https://docs.npmjs.com/files/package.json#dependencies
+[shrinkwrap-doc]: https://docs.npmjs.com/cli/shrinkwrap
