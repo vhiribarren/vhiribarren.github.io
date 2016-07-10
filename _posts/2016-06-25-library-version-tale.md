@@ -11,6 +11,8 @@ in production, it is good to control the version of the dependencies you use.
 **Embed the libraries you use, or at least set fixed version numbers in your
 favorite dependency management tool.**
 
+<!-- more -->
+
 It can help to avoid lots of bugs and headaches.
 
 Here is one of the weirdest bug I had. I struggled a lot to find its cause, only
@@ -57,7 +59,7 @@ using that library.
 
 But why a behavior so different between my preproduction and production environments?
 
-![Problem Timeline][problem-timeline]
+[![Problem Timeline][problem-timeline]][problem-timeline]
 *Problem timeline*
 
 I immediately redeployed the code in one of my testing environments. Here is the very weird timeline of my tests.

@@ -15,6 +15,8 @@ Contrary to iOS, Android allows running some background tasks through Services;
 knowing the effects of an app swipe on services is important to correctly
 implement apps' services.
 
+<!-- more -->
+
 What exactly happens after a "kill" initiated by the user? How can we react
 and protect the execution of a background service? Android provides tools to
 give some priorities to services, but what exactly happens to the lifecyle of

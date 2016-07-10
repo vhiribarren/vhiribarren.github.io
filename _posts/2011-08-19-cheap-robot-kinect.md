@@ -9,6 +9,8 @@ Ever dreamed to pilot your own robot? Without using a keyboard and without tons 
 
 However, do you know it is possible for you to build your own prototype?
 
+<!-- more --> 
+
 <iframe width="320" height="240" style="display:block;margin-left:auto;margin-right:auto" src="https://www.youtube.com/embed/78RmoMFRhwA" frameborder="0" allowfullscreen></iframe>
 
 The main characteristics of the following project are:
