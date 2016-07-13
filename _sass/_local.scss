@@ -1,16 +1,3 @@
----
----
-
-$on-palm:          600px;
-$spacing-unit:     30px;
-
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
 /**
  * Icons
  */
