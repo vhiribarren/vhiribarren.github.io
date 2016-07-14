@@ -32,12 +32,7 @@ defaults:
 
 gems:
   - jekyll-feed
-  - jekyll-archives
 
-jekyll-archives:
-  enabled:
-      - tags
-  layout: 'archive'
 
 # Google services
 google_analytics: UA-25235081-2

@@ -1,15 +1,14 @@
 ---
 layout: post
 title: Cheap Robot Kinect
-tags:
-  - project
+tags: [project]
 ---
 
 Ever dreamed to pilot your own robot? Without using a keyboard and without tons of sensors on your skin? Just by moving? Actually, lots of people are working on this kind of thing and have some working prototypes. Well… expensive prototypes.
 
 However, do you know it is possible for you to build your own prototype?
 
-<!-- more --> 
+<!-- more -->
 
 <iframe width="320" height="240" style="display:block;margin-left:auto;margin-right:auto" src="https://www.youtube.com/embed/78RmoMFRhwA" frameborder="0" allowfullscreen></iframe>
 

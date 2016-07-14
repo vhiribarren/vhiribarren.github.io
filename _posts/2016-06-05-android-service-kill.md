@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Effect of swiping an Android app in recent app list
-tags:
-  - mobile
-  - android
+tags: [android]
 ---
 
 By nature, an Android app can be stopped and killed any time by the user or the

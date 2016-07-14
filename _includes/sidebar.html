@@ -37,13 +37,13 @@
           {% endfor %}
 
           {% if site.github_username %}
-          <a class="sidebar-nav-item"  href="https://github.com/{{ site.github_username }}"><span class="icon icon--github">{% include icon-github.svg %}</span><span class="username">GitHub</span></a>
+            {% include icon-github.html username=site.github_username %}
           {% endif %}
           {% if site.twitter_username %}
-          <a class="sidebar-nav-item"  href="https://twitter.com/{{ site.twitter_username }}"><span class="icon icon--twitter">{% include icon-twitter.svg %}</span><span class="username">Twitter</span></a>
+            {% include icon-twitter.html username=site.twitter_username %}
           {% endif %}
           {% if site.linkedin_username %}
-          <a class="sidebar-nav-item"  href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><span class="icon icon--linkedin">{% include icon-linkedin.svg %}</span><span class="username" style="margin-left: 6px">LinkedIn</span></a>
+            {% include icon-linkedin.html username=site.linkedin_username %}
           {% endif %}
           <a class="sidebar-nav-item"  href="{{ "feed.xml" | prepend: site.baseurl }}"><span class="icon icon--rss">{% include icon-rss.svg %}</span><span class="username" style="margin-left: 6px">RSS</span></a>
       </div>

@@ -1,3 +1,16 @@
+.theme-base .sidebar {
+  background-color: $theme-color;
+}
+.theme-base .content a,
+.theme-base .related-posts li a:hover {
+  color: $theme-color;
+}
+
+.inline-date {
+  @extend .post-date;
+  display: inline;
+}
+
 /**
  * Icons
  */
@@ -50,7 +63,7 @@ pre code {
 
     @include media-query($on-palm) {
         float: right;
-        background-color:  #546E7A;
+        background-color:  $theme-color;
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
