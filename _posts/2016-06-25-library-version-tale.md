@@ -6,6 +6,8 @@ tags:
   - software-engineering
 ---
 
+*Updated on 2017/10 with yarn*{: style="color: red"}
+
 Something every developer should know: when you develop a project that has to go
 in production, it is good to control the version of the dependencies you use.
 **Embed the libraries you use, or at least set fixed version numbers in your
@@ -157,6 +159,8 @@ How this problem can be solved? There are generally 2 possibilities:
 The second option is better, and actually some dependency tools for other
 programming languages do that by default.
 
+### With npm
+
 `npm` provides a [special command][shrinkwrap-doc] that can help:
 
     npm shrinkwrap
@@ -178,8 +182,29 @@ The process is simple:
 All the hierarchy of dependencies becomes known. A production environment must
 be as predictable as possible.
 
+### With yarn
+
+[`yarn`][yarn] is a replacement for `npm`. I have little doubt it will
+completely replace `npm` in the future since it features many interesting
+improvement as compared with `npm`, while using the same library database than
+`npm`.
+
+`yarn` produces a `yarn.lock` file similar to `npm-shrinkwrap.json` which
+details all the transitive dependencies. You must add your dependencies using
+the `yarn add` command: it will automatically install them and will also update
+the `yarn.lock` and `package.json` files.
+
+This approch is better since you do not have to think about fixing your
+dependencies: `yarn` will do that for you automatically.
+
+Just do not forget that as for `npm-shrinkwrap.json`, `yarn.lock` is a file
+that must be shared between developers, you must not ignore it in your source
+version control system.
+
+
 [semver]: http://semver.org/
 [problem-timeline]: {{site.url}}/assets/posts/library-version-tale/problem-timeline.png
 [full-timeline]: {{site.url}}/assets/posts/library-version-tale/problem-timeline-full.png
 [npm-dependencies-doc]: https://docs.npmjs.com/files/package.json#dependencies
 [shrinkwrap-doc]: https://docs.npmjs.com/cli/shrinkwrap
+[yarn]: https://yarnpkg.com
