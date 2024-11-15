@@ -1,12 +1,7 @@
-name: Deploy Astro site to GitHub Pages
+name: Build & Deploy Astro site to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -73,7 +68,9 @@ jobs:
         with:
           path: ${{ env.BUILD_PATH }}/dist
 
+  # Deployment job only if on main branch
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
