@@ -48,7 +48,7 @@ Logs are collected and studied.
 `MyApplication` does not vary from a test to another. The first implement of
 `MyActivity` is common to several tests. Here are their implementations.
 
-Code is [available on GitHub](https://github.com/vhiribarren/tuto-android-service-kill).
+Code is [available on GitHub](https://github.com/vhiribarren/android-service-kill-study).
 
 **MyApplication.java**
 

@@ -8,12 +8,12 @@ Links I do not want to forget and I find interesting to share.
 
 - Alternatives and warnings about semantic versioning
     - [SemVer will not save you](https://hynek.me/articles/semver-will-not-save-you/)
-    - [Hyrum's Law](https://www.hyrumslaw.com/) - One it is used, any fix can be a breaking change
+    - [Hyrum's Law](https://www.hyrumslaw.com/) - Once it is used, any fix can be a breaking change
     - [Calendar Versioning](https://calver.org/)
 - Deployment configuration management and versioning
     - [Stop using branches deploying different gitops environments](https://codefresh.io/blog/stop-using-branches-deploying-different-gitops-environments/)
     - [How to model your gitops environments and promote releases between them](https://codefresh.io/blog/how-to-model-your-gitops-environments-and-promote-releases-between-them/)
-- [Programming as Theory building](https://gist.github.com/onlurking/fc5c81d18cfce9ff81bc968a7f342fb1), Peter Naur
+- [Programming as Theory building](https://gist.github.com/onlurking/fc5c81d18cfce9ff81bc968a7f342fb1) - by Peter Naur
 - [End of life date of various software components](https://endoflife.date/)
 - [Trunk based development](https://trunkbaseddevelopment.com/)
 - [Langium](https://langium.org/) - Framework to quickly develop Language Server Protocol compatible languages
@@ -21,7 +21,11 @@ Links I do not want to forget and I find interesting to share.
 ## Computer Graphics
 
 - [Inigo Quilez web site](https://iquilezles.org/) - Treasure trove on shaders and computer graphics
+- [Shader Toy](https://www.shadertoy.com/) - demos of what can be done using fragment shaders
+- [Scratch a pixel](https://www.scratchapixel.com/) - Tutorials on computer graphics
 - [Learn Wgpu](https://sotrh.github.io/learn-wgpu/) - for Rust
+- [WebGL2 Fundamentals](https://webgl2fundamentals.org/)
+- [The book of shaders](https://thebookofshaders.com/)
 
 ## Rust
 
@@ -76,3 +80,9 @@ Links I do not want to forget and I find interesting to share.
 ## Mathematics
 
 - [Category Theory](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Bartosz Milewski
+
+## Spoken languages
+
+- [Guide to Japanese](https://guidetojapanese.org/) - Japanese grammar
+- [Jisho](https://jisho.org/) - Japanese dictionary
+- [Anki](https://apps.ankiweb.net/) - Tool to help memorize anything
