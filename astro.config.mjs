@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'alea.net workshop',
+			plugins: [starlightImageZoom()],
 			logo: {src: './src/assets/hvct.svg'},
 			pagination: false,
 			social: {

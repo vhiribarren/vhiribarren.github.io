@@ -283,6 +283,6 @@ app to restart, contrary to the `START_NOT_STICKY` method.
 
 Beware of the cases where the `Application` class is called or is not called.
 
-[![Activity Diagram][activity-diagram]][activity-diagram]
+![Activity Diagram][activity-diagram]
 
 [activity-diagram]: img/activity-service-diagram.png

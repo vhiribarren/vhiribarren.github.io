@@ -57,8 +57,7 @@ using that library.
 
 But why a behavior so different between my preproduction and production environments?
 
-[![Problem Timeline][problem-timeline]][problem-timeline]
-*Problem timeline*
+![Problem Timeline][problem-timeline]
 
 I immediately redeployed the code in one of my testing environments. Here is the very weird timeline of my tests.
 
@@ -84,8 +83,7 @@ I finally had the intuition of checking the commit logs on GitHub of
 If we add the timeline of the *awesome-library* evolution, the full timeline
 view becomes:
 
-[![Problem Timeline Full][full-timeline]][full-timeline]
-*Full timeline of the problem*
+![Problem Timeline Full][full-timeline]
 
 When a fresh installation of my app is done, *awesome-library* is automatically
 pulled from GitHub.
