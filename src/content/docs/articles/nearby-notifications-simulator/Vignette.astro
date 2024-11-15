@@ -1,0 +1,16 @@
+---
+import { type LocalImageProps, type RemoteImageProps } from 'astro:assets';
+type Props = LocalImageProps | RemoteImageProps;
+
+import { Image } from 'astro:assets';
+
+const { ...attrs } = Astro.props;
+---
+<Image {...attrs} class="vignette" />
+
+<style>
+  img.vignette {
+    width: 30%;
+    display: inline;
+  }
+</style>
