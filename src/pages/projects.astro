@@ -1,0 +1,60 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('docs', ({ id }) => {
+  return id.startsWith('projects/');
+});
+const articles = allArticles.filter(article => article.data.draft === false);
+articles.sort((left, right) => {
+  const leftDate = left.data.publishDate ?? (left.data.lastUpdated instanceof Date ? left.data.lastUpdated as Date:  new Date(0));
+  const rightDate = right.data.publishDate ?? (right.data.lastUpdated instanceof Date ? right.data.lastUpdated as Date:  new Date(0));
+  return rightDate.getTime() - leftDate.getTime() ;
+})
+---
+
+<style>
+  table a {text-decoration: none;}
+  .icon-inline {display: inline !important }
+</style>
+
+<StarlightPage frontmatter={{ title: 'Projects', tableOfContents: false }}>
+
+  <p>
+    You will find various projects on 
+    <a href="https://github.com/vhiribarren"><Icon name="github" class='icon-inline'/> GitHub</a>.
+  </p>
+  <p>
+    Some of them or others have a dedicated project page described here.
+  </p>
+
+  <table>
+    <thead>
+      <th>Created</th>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      {articles.map((article: any) => (
+        <tr>
+          <td>
+            { article.data.publishDate &&
+                <time datetime={article.data.publishDate.toISOString()}>
+                  {article.data.publishDate.toDateString()}
+                </time>
+            }
+          </td>
+          <td>
+            <a href={`/${article.slug}`}>{article.data.title}</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+
+  <ul>
+
+  </ul>
+
+</StarlightPage>

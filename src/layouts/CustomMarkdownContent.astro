@@ -1,0 +1,31 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import "@astrojs/starlight/style/markdown.css"
+import ImageZoom from 'starlight-image-zoom/components/ImageZoom.astro'
+
+const { lang  } = Astro.props;
+const { publishDate, updateDate } = Astro.props.entry.data;
+  
+---
+
+<ImageZoom />
+
+{ (publishDate || updateDate) &&
+    <p>
+        {publishDate && <>
+			{Astro.locals.t('page.publishDate')}{' '}
+			<time datetime={publishDate.toISOString()}>
+				{publishDate.toLocaleDateString(lang, { dateStyle: 'medium', timeZone: 'UTC' })}
+			</time>
+        </>}
+        {publishDate && updateDate && <br>}
+        {updateDate && <>
+			{Astro.locals.t('page.lastUpdated')}{' '}
+			<time datetime={updateDate.toISOString()}>
+				{updateDate.toLocaleDateString(lang, { dateStyle: 'medium', timeZone: 'UTC' })}
+			</time>
+        </>}
+    </p>
+}
+
+<div class="sl-markdown-content"><slot /></div>
