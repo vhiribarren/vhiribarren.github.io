@@ -1,0 +1,143 @@
+---
+title: Traffic lights with Arduino
+publishDate: 2019-10-30
+---
+
+import { Image } from 'astro:assets';
+import imgTrafficLightsCover from "./img/traffic-lights-cover.webp"
+import imgTrafficLightsDiscovery from "./img/traffic-lights-discovery.webp"
+import imgTrafficLightsMaterials from "./img/traffic-lights-materials.webp"
+import imgTrafficLightsMosfets from "./img/traffic-lights-mosfets.webp"
+import imgTrafficLightsWiring from "./img/traffic-lights-wiring.webp"
+import imgTrafficLightsBack from "./img/traffic-lights-back.webp"
+import imgTrafficLightsFinal from "./img/traffic-lights-final.webp"
+import imgTrafficLightsSetupWithoutBulb from "./img/traffic-lights-setup-without-bulb.webp"
+
+<Image
+    src={imgTrafficLightsCover}
+    alt="Required material" />
+
+:::caution
+I am not an electronics expert; this is just a hobby for me. Please be careful
+if you attempt to replicate what I’ve done.
+:::
+           
+It's amazing what you can find at a flea market! I recently bought some remnants
+of a traffic light, and I decided to take on the challenge of getting it to work.
+
+**Goal**: Restore the traffic light and make it display patterns to create an
+ambient traffic light setup at home! However, I had one important restriction: I
+didn’t want to work with a 230V power source. Since I’m not an electronics
+expert, I wondered if it would be possible to use a simpler DC power source.
+Surely there must be existing circuits I could use to avoid soldering resistors
+or transistors myself, right?
+
+## Opening of the traffic lights
+
+<Image
+    src={imgTrafficLightsDiscovery}
+    style="width: 50%; margin: auto"
+    alt="Required material" />
+
+Inside, the traffic light was mostly empty—just a few bulb sockets with some
+remaining wires. There were no electrical circuits at all, but plenty of space
+to add some.
+
+Each section of the light was closed and had no holes, except for the top part,
+which had two holes. These could be used for inserting a button and a power
+cable.
+
+After a bit of research, I discovered 12V DC LED light bulbs that fit standard
+bulb sockets. Luckily, the Arduino Uno can also be powered by a 12V power
+source.
+
+:::tip[Working with DC and 12V]
+Therefore it should be possible to use a single 12V power source for both the
+light bulbs and the Arduino. However, since the Arduino’s output signals are 5V,
+a component (relay, MOSFET, transistor, etc.) is needed to control the 12V light
+bulbs from the Arduino.
+:::
+
+## Required material
+
+- 1 Arduino board
+- A 12V power supply
+- Three 12V light bulbs
+- A MOSFET transistor board that can drive 12V devices using a 5V signals
+- Various Dupont cables, or better yet, a kit for making them
+- A switch to connect the power supply to the Arduino
+- A push button
+- A soldering iron and tin solder wire
+- A multimeter (useful for testing wires and connections)
+
+<Image
+    src={imgTrafficLightsMaterials}
+    style="width: 50%; margin: auto"
+    alt="Required material" />
+
+Initially, I tried using relays (as seen in some photos), but since the light
+patterns change frequently, the relays were quite noisy. Eventually, I replaced
+them with MOSFETs for quieter operation.
+
+Here is the wired circuit I found with MOSFETs. It also contains optocouplers,
+so the 12V and 5V circuits are fully decoupled.
+
+<Image
+    src={imgTrafficLightsMosfets}
+    style="width: 50%; margin: auto"
+    alt="Required material" />
+
+
+## Wiring
+
+:::note[To do]
+The actual wiring schema does not currently exist.
+:::
+
+Here is how I wired the components.
+
+<Image
+    src={imgTrafficLightsWiring}
+    style="width: 50%; margin: auto"
+    alt="Required material" />
+
+## Cable organization
+
+All of this wasn’t very visually appealing, so I decided to tidy things up.
+
+By using custom-made Dupont cables to ensure the wires weren’t too long and by
+attaching them with adhesive plastic supports, the result was much neater.
+
+<div style="display: grid;  grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+    <Image
+        src={imgTrafficLightsBack}
+        alt="Back of traffic lights" />
+    <Image
+        src={imgTrafficLightsSetupWithoutBulb}
+        alt="Required material" />
+    <Image
+        src={imgTrafficLightsFinal}
+        alt="Required material" />
+</div>
+
+## Source code
+
+The source code is available on GitHub:
+
+- [Arduino source code](https://github.com/vhiribarren/traffic-lights-arduino)
+
+The code implements several patterns that can be changed by pushing the button.
+
+## Result
+
+<iframe
+    width="560"
+    height="315"
+    style="height: 315px"
+    src="https://www.youtube.com/embed/X0R4mNDvToA?si=kao3Veb4F55vHVqA"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+</iframe>
