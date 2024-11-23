@@ -40,6 +40,8 @@ Links I do not want to forget and I find interesting to share.
 ## Web
 
 - [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
+https://jamstack.org/generators/
+- [List of static site generators](https://jamstack.org/generators/)
 
 ## Fluid simulation
 
