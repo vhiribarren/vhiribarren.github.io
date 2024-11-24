@@ -1,0 +1,58 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import ZoomableImage from '../components/ZoomableImage.astro';
+
+const WIDTH_RES = 300;
+const SKETCHES = [
+    ["../assets/sketches/space-tech-corridor-1.webp", "Space base corridor 1"],
+    ["../assets/sketches/hourglass-1.webp", "Hourglass 1"],
+    ["../assets/sketches/clock-rust-1.webp", "Rusty clock 1"],
+    ["../assets/sketches/sky-night-1.webp", "Sky Night 1"],
+    ["../assets/sketches/goban-1.webp", "Goban 1"],
+];
+const sketchInfos = await Promise.all(SKETCHES.map ( async (sketchInfo) => {
+    const src = await import(sketchInfo[0]).then(module => module.default);
+    return {src, label: sketchInfo[1]}
+}));
+
+---
+
+<style>
+    .vignettes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .vignettes  img {
+        min-width: 100%;
+        max-width: 100%;
+        max-height: fit-content;
+        min-height: fit-content;
+    }
+    figure {
+        display: flex;
+        flex-flow: column;
+        line-height: 0;
+    }
+    figcaption {
+        background-color: #222;
+        color: #fff;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+    }
+</style>
+
+<StarlightPage frontmatter={{ title: 'Sketches', tableOfContents: false }}>
+
+    <div class="vignettes not-content">
+        {sketchInfos.map(item => (
+            <figure>
+                <ZoomableImage src={item.src} width={WIDTH_RES} alt={item.label} />
+                <figcaption>{item.label}</figcaption>
+            </figure>
+        ))}
+
+    </div>  
+
+</StarlightPage>

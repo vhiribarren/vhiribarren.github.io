@@ -59,7 +59,7 @@ export default defineConfig({
 					  ],
 				},
 				*/
-				//{ slug: 'sketches' },
+				{ label: 'Sketches', link: '/sketches/' },
 				{ slug: 'bookmarks' },
 				//{ slug: 'curriculum' },
 				{ slug: 'contact' },

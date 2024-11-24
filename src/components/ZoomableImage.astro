@@ -1,0 +1,66 @@
+---
+import { type LocalImageProps, type RemoteImageProps } from 'astro:assets';
+import { Image } from 'astro:assets';
+//type Props = LocalImageProps | RemoteImageProps;
+const { src, alt, width, height, ...attrs } = Astro.props;
+---
+
+<div>
+  <Image
+    src={src}
+    width={width}
+    height={height}
+    alt={alt}
+    class:list={["zoomable-img"]}
+    data-zoom-off
+    {...attrs} />
+  <dialog class:list={["fullscreen-dlg"]}>
+    <div class="flex-wrapper">
+        <Image src={src} alt={alt} data-zoom-off />
+    </div>
+  </dialog>
+</div>
+
+<style>
+    .zoomable-img {
+        cursor: zoom-in;
+    }
+    .fullscreen-dlg {
+        margin: 0 !important;
+        padding: 0;
+        border-width: 0;
+        width: 100vw;
+        height: 100vh;
+        max-height: 100%;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: zoom-out;
+    }
+    .flex-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .fullscreen-dlg img {
+        display: block;
+        margin: auto;
+        max-height: 100%;
+        height: max-content;
+        width: auto;
+    }
+</style>
+
+<script>
+    const zoomableImages = document.querySelectorAll(".zoomable-img");
+    zoomableImages.forEach(zoomableImage => {
+        const linkedZoomedImage = zoomableImage.parentElement!.querySelector(".fullscreen-dlg")! as HTMLDialogElement;
+        zoomableImage.addEventListener("click", () => {
+            linkedZoomedImage.showModal();
+        });
+        linkedZoomedImage.addEventListener("click", () => {
+            linkedZoomedImage.close();
+        });
+    });
+</script>
