@@ -1,17 +1,20 @@
 ---
+import type { ImageMetadata } from 'astro';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import ZoomableImage from '../components/ZoomableImage.astro';
 
+const SKETCHES_PATH_PREFIX = "/src/assets/sketches/";
 const WIDTH_RES = 300;
+const IMAGES = import.meta.glob<{ default: ImageMetadata }>("/src/assets/sketches/*.{jpeg,jpg,png,gif,webp}");
 const SKETCHES = [
-    ["../assets/sketches/space-tech-corridor-1.webp", "Space base corridor 1"],
-    ["../assets/sketches/hourglass-1.webp", "Hourglass 1"],
-    ["../assets/sketches/clock-rust-1.webp", "Rusty clock 1"],
-    ["../assets/sketches/sky-night-1.webp", "Sky Night 1"],
-    ["../assets/sketches/goban-1.webp", "Goban 1"],
+    [SKETCHES_PATH_PREFIX+"space-tech-corridor-1.webp", "Space base corridor 1"],
+    [SKETCHES_PATH_PREFIX+"hourglass-1.webp", "Hourglass 1"],
+    [SKETCHES_PATH_PREFIX+"clock-rust-1.webp", "Rusty clock 1"],
+    [SKETCHES_PATH_PREFIX+"sky-night-1.webp", "Sky Night 1"],
+    [SKETCHES_PATH_PREFIX+"goban-1.webp", "Goban 1"],
 ];
 const sketchInfos = await Promise.all(SKETCHES.map ( async (sketchInfo) => {
-    const src = await import(sketchInfo[0]).then(module => module.default);
+    const src = IMAGES[sketchInfo[0]]();
     return {src, label: sketchInfo[1]}
 }));
 
