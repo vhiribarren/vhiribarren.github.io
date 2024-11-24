@@ -22,11 +22,17 @@ const sketchInfos = await Promise.all(SKETCHES.map ( async (sketchInfo) => {
 
 <style>
     .vignettes {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         gap: 10px;
+        align-items: center;
+        justify-content: center;
     }
-    .vignettes  img {
+    .vignettes > * {
+        flex-basis: 200px;
+    }
+    .vignettes img {
         min-width: 100%;
         max-width: 100%;
         max-height: fit-content;
@@ -47,7 +53,6 @@ const sketchInfos = await Promise.all(SKETCHES.map ( async (sketchInfo) => {
 </style>
 
 <StarlightPage frontmatter={{ title: 'Sketches', tableOfContents: false }}>
-
     <div class="vignettes not-content">
         {sketchInfos.map(item => (
             <figure>
@@ -55,7 +60,5 @@ const sketchInfos = await Promise.all(SKETCHES.map ( async (sketchInfo) => {
                 <figcaption>{item.label}</figcaption>
             </figure>
         ))}
-
     </div>  
-
 </StarlightPage>
