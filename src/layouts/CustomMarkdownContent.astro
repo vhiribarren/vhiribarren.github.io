@@ -1,14 +1,10 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
 import "@astrojs/starlight/style/markdown.css"
-import ImageZoom from 'starlight-image-zoom/components/ImageZoom.astro'
 
 const { lang  } = Astro.props;
 const { publishDate, updateDate } = Astro.props.entry.data;
-  
 ---
-
-<ImageZoom />
 
 { (publishDate || updateDate) &&
     <p>
