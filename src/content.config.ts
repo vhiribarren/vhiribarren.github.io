@@ -1,8 +1,9 @@
 import { defineCollection, z } from 'astro:content';
+import { docsLoader, i18nLoader } from "@astrojs/starlight/loaders";
 import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 
 const docCollection = defineCollection({
-	type: "content",
+	loader: docsLoader(),
 	schema: docsSchema({
 		extend: z.object({
 			publishDate: z.date().optional(),
@@ -12,7 +13,7 @@ const docCollection = defineCollection({
 });
 
 const i18nCollection = defineCollection({
-	type: 'data',
+	loader: i18nLoader(),
 	schema: i18nSchema({
 		extend: z.object({
 		  'page.publishDate': z.string().optional(),
