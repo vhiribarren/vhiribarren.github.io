@@ -119,11 +119,11 @@ export function mdZoomableImageDirectivePlugin() {
         data.hProperties = hast.data!.hProperties
         node.children = hast.children
 
-        if (tree.children.every( c => c.id !== STYLE_ID)) {
-            tree.children.push({id: STYLE_ID, type: 'html', value: HTML_STYLE})
+        if (tree.children.every(c => (c as any).id !== STYLE_ID)) {
+            tree.children.push({id: STYLE_ID, type: 'html', value: HTML_STYLE} as any)
         }
-        if (tree.children.every( c => c.id !== JAVASCRIPT_ID)) {
-            tree.children.push({id: JAVASCRIPT_ID, type: 'html', value: JAVASCRIPT_CODE})
+        if (tree.children.every(c => (c as any).id !== JAVASCRIPT_ID)) {
+            tree.children.push({id: JAVASCRIPT_ID, type: 'html', value: JAVASCRIPT_CODE} as any)
         }
     })
 
