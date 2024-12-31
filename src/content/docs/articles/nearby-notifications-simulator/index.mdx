@@ -3,27 +3,7 @@ title: Generate Nearby Notifications using Beacon Simulator
 publishDate: 2017-10-21
 ---
 
-import { Image } from 'astro:assets';
 import VignetteGrid from './VignetteGrid.astro';
-
-import imgUrlStep1 from "img/url_step_1.jpg";
-import imgUrlStep2 from "img/url_step_2.jpg";
-import imgUrlStep3 from "img/url_step_3.jpg";
-import imgUrlStep4 from "img/url_step_4.jpg";
-import imgUrlStep5 from "img/url_step_5.jpg";
-import imgUrlStep6 from "img/url_step_6.jpg";
-import imgUrlStep7 from "img/url_step_7.jpg";
-import imgUrlStep8 from "img/url_step_8.jpg";
-import imgUrlStep9 from "img/url_step_9.jpg";
-import imgUrlStep10 from "img/url_step_10.jpg";
-
-import imgAppStep1 from "img/app_step_1.jpg";
-import imgAppStep2 from "img/app_step_2.jpg";
-import imgAppStep3 from "img/app_step_3.jpg";
-import imgAppStep4 from "img/app_step_4.jpg";
-import imgAppStep5 from "img/app_step_5.jpg";
-import imgAppStepEnd from "img/app_step_end.jpg";
-
 
 :::danger[Deprecated]
 This article is not valid any more, since all the nearby technologies were
@@ -75,9 +55,9 @@ beacon format. Let's use it!
 **Step 1:** install [Beacon Simulator][beacon-simulator] for Android.
 
 <VignetteGrid>
-  <Image src={imgUrlStep1}  alt="URL Step 1" />
-  <Image src={imgUrlStep2}  alt="URL Step 2" />
-  <Image src={imgUrlStep3}  alt="URL Step 3" />
+  ::zoomableImage[URL Step 1]{src=img/url_step_1.jpg}
+  ::zoomableImage[URL Step 2]{src=img/url_step_2.jpg}
+  ::zoomableImage[URL Step 3]{src=img/url_step_3.jpg}
 </VignetteGrid>
 
 **Step 2:** create a new Eddystone URL beacon, and minify the URL; depending on the
@@ -85,15 +65,15 @@ version, the app may tell you that the URL is invalid due to the "at sign", but
 minifying the URL will solve the problem.
 
 <VignetteGrid>
-  <Image src={imgUrlStep4}  alt="URL Step 4" />
-  <Image src={imgUrlStep5}  alt="URL Step 5" />
-  <Image src={imgUrlStep6}  alt="URL Step 6" />
+  ::zoomableImage[URL Step 4]{src=img/url_step_4.jpg}
+  ::zoomableImage[URL Step 5]{src=img/url_step_5.jpg}
+  ::zoomableImage[URL Step 6]{src=img/url_step_6.jpg}
 </VignetteGrid>
 
 **Step 3:** start a broadcast.
 
 <VignetteGrid>
-  <Image src={imgUrlStep7} alt="URL Step 7" />
+  ::zoomableImage[URL Step 7]{src=img/url_step_7.jpg}
 </VignetteGrid>
 
 **Notes:**
@@ -121,15 +101,15 @@ when the screen is switched on. It allows the phone to have a scan algorithm tha
 avoid consuming to much battery.
 
 <VignetteGrid>
-  <Image src={imgUrlStep8}  alt="URL Step 8" />
+  ::zoomableImage[URL Step 8]{src=img/url_step_8.jpg}
 </VignetteGrid>
 
 You can have more control on Nearby Notifications, usually by going to your phone
 settings. Here you can force Nearby scans, and also block notifications.
 
 <VignetteGrid>
-  <Image src={imgUrlStep9}  alt="URL Step 9" />
-  <Image src={imgUrlStep10}  alt="URL Step 10" />
+  ::zoomableImage[URL Step 9]{src=img/url_step_9.jpg}
+  ::zoomableImage[URL Step 10]{src=img/url_step_10.jpg}
 </VignetteGrid>
 
 ## Broadcast a mobile app reference - advanced
@@ -177,7 +157,7 @@ beacon. The auto generated identifier should be ok, but you can choose yours.
 Start the broadcast.
 
 <VignetteGrid>
-  <Image src={imgAppStep1}  alt="App Step 1" />
+  ::zoomableImage[App Step 1]{src=img/app_step_1.jpg}
 </VignetteGrid>
 
 **Step 2:** you may need to create a [Google API Project][google-api-project]
@@ -188,7 +168,7 @@ configure more.
 may have to select a previously created [Google API Project][google-api-project].
 
 <VignetteGrid>
-  <Image src={imgAppStep2}  alt="App Step 2" />
+  ::zoomableImage[App Step 2]{src=img/app_step_2.jpg}
 </VignetteGrid>
 
 **Step 4:** with [Google Beacon Tools][beacon-tools], scan for the simulator.
@@ -207,8 +187,8 @@ Do not pay attention to *Attachments*: this is not currently compatible with
 identifier with another way.
 
 <VignetteGrid>
-  <Image src={imgAppStep3}  alt="App Step 3" />
-  <Image src={imgAppStep4}  alt="App Step 4" />
+  ::zoomableImage[App Step 3]{src=img/app_step_3.jpg}
+  ::zoomableImage[App Step 4]{src=img/app_step_4.jpg}
 </VignetteGrid>
 
 **Step 5:** we can finally configure the newly registered beacon with
@@ -233,7 +213,7 @@ You have to set:
 - the intent scheme is for internal use of your app, you can select something simple to start
 
 <VignetteGrid>
-  <Image src={imgAppStep5}  alt="App Step 5" />
+  ::zoomableImage[App Step 5]{src=img/app_step_5.jpg}
 </VignetteGrid>
 
 Do not forget to:
@@ -257,7 +237,7 @@ You can modify in which conditions the notification appears using
 to disable the notification if the user already have the application installed.
 
 <VignetteGrid>
-  <Image src={imgAppStepEnd}  alt="App Step End" />
+  ::zoomableImage[App Step End]{src=img/app_step_end.jpg}
 </VignetteGrid>
 
 
@@ -271,4 +251,3 @@ to disable the notification if the user already have the application installed.
 [google-beacon-dashboard]: https://developers.google.com/beacons/dashboard
 
 [eddystone-uid-resolution]: img/eddystone-uid-resolution.jpg
-
