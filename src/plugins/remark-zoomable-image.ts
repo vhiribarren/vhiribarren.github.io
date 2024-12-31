@@ -34,8 +34,9 @@ const HTML_STYLE = `
         display: block;
         margin: auto;
         max-height: 100%;
-        width: auto;
+        max-width: 100%;
         height: max-content;
+        width: max-content;
     }
 </style>
 `
