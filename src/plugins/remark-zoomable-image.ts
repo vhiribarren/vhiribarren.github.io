@@ -74,7 +74,7 @@ function buildHastForMdast({src, alt, width, height, style}: BuildHastForMdastPa
                     display: block;
                     margin: auto;
                     max-height: 100%;
-                    max-width: 100%;
+                    width: auto;
                     height: max-content;
                 } 
             `}]),
