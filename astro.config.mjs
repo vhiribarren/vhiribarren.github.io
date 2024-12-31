@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkDirective from 'remark-directive';
 import {mdZoomableImageDirectivePlugin} from './src/plugins/remark-zoomable-image.ts'
 
 // https://astro.build/config
@@ -17,7 +18,7 @@ export default defineConfig({
 	},
 	*/
 	markdown: {
-		remarkPlugins: [mdZoomableImageDirectivePlugin]
+		remarkPlugins: [remarkDirective, mdZoomableImageDirectivePlugin]
 	},
 	integrations: [
 		starlight({
