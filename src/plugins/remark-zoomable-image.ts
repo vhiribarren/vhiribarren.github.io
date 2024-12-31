@@ -21,16 +21,17 @@ function h(el: string, attrs: Properties = {}, children: any[] = []): P {
 interface BuildHastForMdastParams {
     src: string;
     alt: string;
-    width: string | null | undefined;
-    height: string | null | undefined;
+    width?: string | null;
+    height?: string | null;
+    style?: string | null;
 }
-function buildHastForMdast({src, alt, width, height}: BuildHastForMdastParams) {
+function buildHastForMdast({src, alt, width, height, style}: BuildHastForMdastParams) {
     return h(
         'div', {class: 'zoomable-image-wrapper'}, [
-            h('img', {src, alt, width, height}),
+            {type: 'image', url: src, alt, data: {hName: "img", hProperties: {width, height, style}}},
             h('dialog', {class: 'fullscreen-dlg'}, [
                 h('div', { class: 'flex-wrapper', }, [
-                    h('img', {src, alt}),
+                    {type: 'image', url: src, alt},
                 ]),
             ]),
             h('script', {}, [{type: 'text', value: `
@@ -101,15 +102,16 @@ export function mdZoomableImageDirectivePlugin() {
         if (attributes.src == undefined) {
             file.fail("src parameter with URL is required", node)
         }
-        let src = attributes.src;
-        let width = attributes.width;
-        let height = attributes.height;
-        let alt = (node.children[0] as Text).value;
+        let src = attributes.src
+        let width = attributes.width
+        let height = attributes.height
+        let style = attributes.style
+        let alt = (node.children[0] as Text).value
 
-        const hast = buildHastForMdast({src, alt, width, height});
+        const hast = buildHastForMdast({src, alt, width, height, style})
         const data = node.data || (node.data = {})
-        data.hName = hast.data!.hName;
-        data.hProperties = hast.data!.hProperties;
+        data.hName = hast.data!.hName
+        data.hProperties = hast.data!.hProperties
         node.children = hast.children
     })
 
