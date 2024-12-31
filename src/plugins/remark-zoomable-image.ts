@@ -3,27 +3,75 @@ import type { Root, Text, Paragraph as P } from 'mdast';
 import {VFile} from 'vfile'
 import { h as _h, s as _s, type Properties } from 'hastscript';
 
-
 const DIRECTIVE_NAME = 'zoomableImage'
+const STYLE_ID = `${DIRECTIVE_NAME}_style`
+const JAVASCRIPT_ID = `${DIRECTIVE_NAME}_javascript`
 
-// TODO Should probably be only one JS code and one global style
+const HTML_STYLE = `
+<style>
+    .zoomable-image-wrapper > img {
+        cursor: zoom-in;
+    }
+    .fullscreen-dlg {
+        margin: 0 !important;
+        padding: 0;
+        border-width: 0;
+        width: 100vw;
+        height: 100vh;
+        max-height: 100%;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: zoom-out;
+    }
+    .flex-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .fullscreen-dlg img {
+        display: block;
+        margin: auto;
+        max-height: 100%;
+        width: auto;
+        height: max-content;
+    }
+</style>
+`
+const JAVASCRIPT_CODE = `
+<script>
+(function() {
+    const zoomableImages = document.querySelectorAll(".zoomable-image-wrapper > img");
+    zoomableImages.forEach(zoomableImage => {
+        const linkedZoomedImage = zoomableImage.parentElement.querySelector(".fullscreen-dlg");
+        zoomableImage.onclick = () => {
+            linkedZoomedImage.showModal();
+        };
+        linkedZoomedImage.onclick = () => {
+            linkedZoomedImage.close();
+        };
+    });
+})()
+</script>
+`
 
 // From https://github.com/withastro/starlight/blob/main/packages/starlight/integrations/asides.ts
 function h(el: string, attrs: Properties = {}, children: any[] = []): P {
-	const { tagName, properties } = _h(el, attrs);
+	const { tagName, properties } = _h(el, attrs)
 	return {
 		type: 'paragraph',
 		data: { hName: tagName, hProperties: properties },
 		children,
-	};
+	}
 }
 
 interface BuildHastForMdastParams {
-    src: string;
-    alt: string;
-    width?: string | null;
-    height?: string | null;
-    style?: string | null;
+    src: string
+    alt: string
+    width?: string | null
+    height?: string | null
+    style?: string | null
 }
 function buildHastForMdast({src, alt, width, height, style}: BuildHastForMdastParams) {
     return h(
@@ -34,52 +82,8 @@ function buildHastForMdast({src, alt, width, height, style}: BuildHastForMdastPa
                     {type: 'image', url: src, alt},
                 ]),
             ]),
-            h('script', {}, [{type: 'text', value: `
-                (function() {
-                    const zoomableImages = document.querySelectorAll(".zoomable-image-wrapper > img");
-                    zoomableImages.forEach(zoomableImage => {
-                        const linkedZoomedImage = zoomableImage.parentElement.querySelector(".fullscreen-dlg");
-                        zoomableImage.onclick = () => {
-                            linkedZoomedImage.showModal();
-                        };
-                        linkedZoomedImage.onclick = () => {
-                            linkedZoomedImage.close();
-                        };
-                    });
-                })()
-            `}]),
-            h('style', {}, [{type: 'text', value: `
-                .zoomable-image-wrapper > img {
-                    cursor: zoom-in;
-                }
-                .fullscreen-dlg {
-                    margin: 0 !important;
-                    padding: 0;
-                    border-width: 0;
-                    width: 100vw;
-                    height: 100vh;
-                    max-height: 100%;
-                    max-width: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    cursor: zoom-out;
-                }
-                .flex-wrapper {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 100%;
-                }
-                .fullscreen-dlg img {
-                    display: block;
-                    margin: auto;
-                    max-height: 100%;
-                    width: auto;
-                    height: max-content;
-                } 
-            `}]),
         ]
-    );
+    )
 }
 
 
@@ -91,7 +95,7 @@ export function mdZoomableImageDirectivePlugin() {
         const isDirective =
             node.type === 'containerDirective' ||
             node.type === 'leafDirective' ||
-            node.type === 'textDirective';
+            node.type === 'textDirective'
         if (!isDirective || node.name !== DIRECTIVE_NAME) {
             return // not for this plugin
         }
@@ -113,6 +117,13 @@ export function mdZoomableImageDirectivePlugin() {
         data.hName = hast.data!.hName
         data.hProperties = hast.data!.hProperties
         node.children = hast.children
+
+        if (tree.children.every( c => c.id !== STYLE_ID)) {
+            tree.children.push({id: STYLE_ID, type: 'html', value: HTML_STYLE})
+        }
+        if (tree.children.every( c => c.id !== JAVASCRIPT_ID)) {
+            tree.children.push({id: JAVASCRIPT_ID, type: 'html', value: JAVASCRIPT_CODE})
+        }
     })
 
   }
