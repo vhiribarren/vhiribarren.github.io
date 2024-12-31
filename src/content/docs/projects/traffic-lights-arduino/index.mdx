@@ -3,19 +3,7 @@ title: Traffic lights with Arduino
 publishDate: 2019-10-30
 ---
 
-import { Image } from 'astro:assets';
-import imgTrafficLightsCover from "./img/traffic-lights-cover.webp"
-import imgTrafficLightsDiscovery from "./img/traffic-lights-discovery.webp"
-import imgTrafficLightsMaterials from "./img/traffic-lights-materials.webp"
-import imgTrafficLightsMosfets from "./img/traffic-lights-mosfets.webp"
-import imgTrafficLightsWiring from "./img/traffic-lights-wiring.webp"
-import imgTrafficLightsBack from "./img/traffic-lights-back.webp"
-import imgTrafficLightsFinal from "./img/traffic-lights-final.webp"
-import imgTrafficLightsSetupWithoutBulb from "./img/traffic-lights-setup-without-bulb.webp"
-
-<Image
-    src={imgTrafficLightsCover}
-    alt="Required material" />
+::zoomableImage[Traffic lights cover]{src=img/traffic-lights-cover.webp style="margin: auto"}
 
 :::caution
 I am not an electronics expert; this is just a hobby for me. Please be careful
@@ -34,10 +22,7 @@ or transistors myself, right?
 
 ## Opening of the traffic lights
 
-<Image
-    src={imgTrafficLightsDiscovery}
-    style="width: 50%; margin: auto"
-    alt="Required material" />
+::zoomableImage[Content of traffic lights]{src=img/traffic-lights-discovery.webp width=360 style="margin: auto"}
 
 Inside, the traffic light was mostly empty—just a few bulb sockets with some
 remaining wires. There were no electrical circuits at all, but plenty of space
@@ -70,10 +55,7 @@ bulbs from the Arduino.
 - A soldering iron and tin solder wire
 - A multimeter (useful for testing wires and connections)
 
-<Image
-    src={imgTrafficLightsMaterials}
-    style="width: 50%; margin: auto"
-    alt="Required material" />
+::zoomableImage[Required material]{src=img/traffic-lights-materials.webp width=360 style="margin: auto"}
 
 Initially, I tried using relays (as seen in some photos), but since the light
 patterns change frequently, the relays were quite noisy. Eventually, I replaced
@@ -82,10 +64,8 @@ them with MOSFETs for quieter operation.
 Here is the wired circuit I found with MOSFETs. It also contains optocouplers,
 so the 12V and 5V circuits are fully decoupled.
 
-<Image
-    src={imgTrafficLightsMosfets}
-    style="width: 50%; margin: auto"
-    alt="Required material" />
+::zoomableImage[Mosfets with circuit]{src=img/traffic-lights-mosfets.webp width=360 style="margin: auto"}
+
 
 
 ## Wiring
@@ -96,10 +76,7 @@ The actual wiring schema does not currently exist.
 
 Here is how I wired the components.
 
-<Image
-    src={imgTrafficLightsWiring}
-    style="width: 50%; margin: auto"
-    alt="Required material" />
+::zoomableImage[Wirings]{src=img/traffic-lights-wiring.webp width=360 style="margin: auto"}
 
 ## Cable organization
 
@@ -109,15 +86,9 @@ By using custom-made Dupont cables to ensure the wires weren’t too long and by
 attaching them with adhesive plastic supports, the result was much neater.
 
 <div style="display: grid;  grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-    <Image
-        src={imgTrafficLightsBack}
-        alt="Back of traffic lights" />
-    <Image
-        src={imgTrafficLightsSetupWithoutBulb}
-        alt="Required material" />
-    <Image
-        src={imgTrafficLightsFinal}
-        alt="Required material" />
+    ::zoomableImage[Back of traffic lights]{src=img/traffic-lights-back.webp width=230}
+    ::zoomableImage[Result withoug bulb]{src=img/traffic-lights-setup-without-bulb.webp width=230}
+    ::zoomableImage[Full final result]{src=img/traffic-lights-final.webp width=230}
 </div>
 
 ## Source code
