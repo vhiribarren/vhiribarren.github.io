@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import {mdZoomableImageDirectivePlugin} from './src/plugins/remark-zoomable-image.ts'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,9 @@ export default defineConfig({
 		}
 	},
 	*/
+	markdown: {
+		remarkPlugins: [mdZoomableImageDirectivePlugin]
+	},
 	integrations: [
 		starlight({
 			title: 'alea.net workshop',
