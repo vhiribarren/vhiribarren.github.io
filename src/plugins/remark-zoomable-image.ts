@@ -1,13 +1,14 @@
 import {visit} from 'unist-util-visit'
-import type { Root, Text } from 'mdast';
+import type { Root, Text, Paragraph as P } from 'mdast';
 import {VFile} from 'vfile'
 import { h as _h, s as _s, type Properties } from 'hastscript';
 
 
 const DIRECTIVE_NAME = 'zoomableImage'
 
+// TODO Should probably be only one JS code and one global style
 
-/** Hacky function that generates an mdast HTML tree ready for conversion to HTML by rehype. */
+// From https://github.com/withastro/starlight/blob/main/packages/starlight/integrations/asides.ts
 function h(el: string, attrs: Properties = {}, children: any[] = []): P {
 	const { tagName, properties } = _h(el, attrs);
 	return {
@@ -17,7 +18,13 @@ function h(el: string, attrs: Properties = {}, children: any[] = []): P {
 	};
 }
 
-function buildHastForMdast({src, alt, width, height}) {
+interface BuildHastForMdastParams {
+    src: string;
+    alt: string;
+    width: string | null | undefined;
+    height: string | null | undefined;
+}
+function buildHastForMdast({src, alt, width, height}: BuildHastForMdastParams) {
     return h(
         'div', {class: 'zoomable-image-wrapper'}, [
             h('img', {src, alt, width, height}),
@@ -31,17 +38,17 @@ function buildHastForMdast({src, alt, width, height}) {
                     const zoomableImages = document.querySelectorAll(".zoomable-image-wrapper > img");
                     zoomableImages.forEach(zoomableImage => {
                         const linkedZoomedImage = zoomableImage.parentElement.querySelector(".fullscreen-dlg");
-                        zoomableImage.addEventListener("click", () => {
+                        zoomableImage.onclick = () => {
                             linkedZoomedImage.showModal();
-                        });
-                        linkedZoomedImage.addEventListener("click", () => {
+                        };
+                        linkedZoomedImage.onclick = () => {
                             linkedZoomedImage.close();
-                        });
+                        };
                     });
                 })()
             `}]),
             h('style', {}, [{type: 'text', value: `
-                .zoomable-img {
+                .zoomable-image-wrapper > img {
                     cursor: zoom-in;
                 }
                 .fullscreen-dlg {
@@ -101,8 +108,8 @@ export function mdZoomableImageDirectivePlugin() {
 
         const hast = buildHastForMdast({src, alt, width, height});
         const data = node.data || (node.data = {})
-        data.hName = hast.data.hName;
-        data.hProperties = hast.data.hProperties;
+        data.hName = hast.data!.hName;
+        data.hProperties = hast.data!.hProperties;
         node.children = hast.children
     })
 
