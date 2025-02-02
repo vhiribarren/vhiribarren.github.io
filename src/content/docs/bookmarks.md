@@ -29,19 +29,20 @@ Links I do not want to forget and I find interesting to share.
 
 ## Rust
 
-- pretzelhammer's Rust blog:
+- pretzelhammer's Rust blog
     - [Common Rust lifetime misconception](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md)
     - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md)
     - [Tour of Rust's standard library traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md)
-- async Rust design:
+- Async Rust design
     - [Why Async Rust?](https://without.boats/blog/why-async-rust/)
     - [Design of Pin](https://without.boats/blog/pin/)
+- Other Rust design
+    - [Graydon Hoare, "The Rust I wanted had no future"](https://graydon2.dreamwidth.org/307291.html)
 
 ## Web
 
 - [State of JavaScript](https://stateofjs.com/)
 - [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
-https://jamstack.org/generators/
 - [List of static site generators](https://jamstack.org/generators/)
 
 ## Fluid simulation
@@ -74,7 +75,6 @@ https://jamstack.org/generators/
 
 - [Advent of Code](https://adventofcode.com/) - Algorithm problems for December
 
-
 ## Embedded & Electronics
 
 - [NAND game](https://nandgame.com/) - Build a computer from scratch
@@ -89,3 +89,7 @@ https://jamstack.org/generators/
 - [Guide to Japanese](https://guidetojapanese.org/) - Japanese grammar
 - [Jisho](https://jisho.org/) - Japanese dictionary
 - [Anki](https://apps.ankiweb.net/) - Tool to help memorize anything
+
+## Programming for children
+
+- [Citizen Code](https://app.citizencode.net/) - Learn in Python and Blockly
