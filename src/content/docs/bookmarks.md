@@ -25,6 +25,7 @@ Links I do not want to forget and I find interesting to share.
 - [Scratch a pixel](https://www.scratchapixel.com/) - Tutorials on computer graphics
 - [Learn Wgpu](https://sotrh.github.io/learn-wgpu/) - for Rust
 - [WebGL2 Fundamentals](https://webgl2fundamentals.org/)
+- [WebGPU Fundamentals](https://webgpufundamentals.org/)
 - [The book of shaders](https://thebookofshaders.com/)
 
 ## Rust
