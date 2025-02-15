@@ -17,6 +17,9 @@ Links I do not want to forget and I find interesting to share.
 - [How to model your gitops environments and promote releases between them](https://codefresh.io/blog/how-to-model-your-gitops-environments-and-promote-releases-between-them/)
 - [End of life date of various software components](https://endoflife.date/)
 
+### Tools
+- [SS64](https://ss64.com/) - Command line reference
+
 ### Essays
 - [Programming as Theory building](https://gist.github.com/onlurking/fc5c81d18cfce9ff81bc968a7f342fb1) - by Peter Naur
 
@@ -69,17 +72,17 @@ Links I do not want to forget and I find interesting to share.
 
 ## Fluid simulation
 
-### Reference articles and papers on fluid simulation
+### Reference articles
 - [Mark J. Harris, in GPU Gems Chapter 38, NVidia publication](https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-38-fast-fluid-dynamics-simulation-gpu)
 - [Jos Stam, "Stable Fluids", In SIGGRAPH 99 Conference Proceedings, Annual Conference Series, August 1999, 121-128.](https://www.dgp.toronto.edu/people/stam/reality/Research/pdf/ns.pdf)
 - [Jos Stam, "Real-Time Fluid Dynamics for Games". Proceedings of the Game Developer Conference, March 2003.](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/GDC03.pdf)
 - [Other publications from Jos Stem](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pub.html)
 
-### Tutorials or simple examples
+### Tutorials and examples
 - [Omar Shehata, "How to Write a Smoke Shader"](https://code.tutsplus.com/how-to-write-a-smoke-shader--cms-25587t)
 - [Shahriar Shahrabi, "Gentle Introduction to Realtime Fluid Simulation for Programmers and Technical Artists"](https://shahriyarshahrabi.medium.com/gentle-introduction-to-fluid-simulation-for-programmers-and-technical-artists-7c0045c40bac)
 
-### Some existing implementations
+### Existing implementations
 - https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 - https://github.com/haxiomic/GPU-Fluid-Experiments
 - https://github.com/mharrys/fluids-2d
@@ -100,19 +103,28 @@ Links I do not want to forget and I find interesting to share.
 
 - [NAND game](https://nandgame.com/) - Build a computer from scratch
 - [Electronics Club](https://electronicsclub.info/)
-
+- [BBC Microbit](https://tech.microbit.org/) - Cortex-M board with a nRF52833 chip
 
 ## Mathematics
 
 - [Category Theory](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Bartosz Milewski
 
 
-## Spoken languages
-
-### Japanese
+## Japanese
 - [Guide to Japanese](https://guidetojapanese.org/) - Japanese grammar
 - [Jisho](https://jisho.org/) - Japanese dictionary
 - [Anki](https://apps.ankiweb.net/) - Tool to help memorize anything
+- [NHK New Web Easy](https://www3.nhk.or.jp/news/easy/)
+
+
+## Demoscene
+
+- [Nectarine](https://scenestream.net/) - Streaming demoscine music 24/7
+
+
+## Cooking
+
+- [(French) Je pense, donc je cuis](https://jepensedoncjecuis.com/) - Science behind cooking
 
 
 ## Programming for children
