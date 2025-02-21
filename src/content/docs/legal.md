@@ -28,7 +28,6 @@ are:
 
 - [Astro](https://github.com/withastro/astro/) - [MIT license](https://github.com/withastro/astro/blob/main/LICENSE)
 - [Starlight](https://github.com/withastro/starlight) - [MIT License](https://github.com/withastro/starlight/blob/main/LICENSE)
-- [starlight-image-zoom](https://github.com/HiDeoo/starlight-image-zoom) - [MIT License](https://github.com/HiDeoo/starlight-image-zoom/blob/main/LICENSE)
 
 These projects rely on many other open-source dependencies. Please check each
 project's repository for a full list. A heartfelt thanks to the FOSS community:
