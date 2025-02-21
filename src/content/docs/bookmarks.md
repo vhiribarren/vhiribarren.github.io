@@ -57,10 +57,12 @@ Links I do not want to forget and I find interesting to share.
 - [Common Rust lifetime misconception](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md)
 - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md)
 - [Tour of Rust's standard library traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md)
+- [Object soup is made of indexes](https://jacko.io/object_soup.html)
 - [Why Async Rust?](https://without.boats/blog/why-async-rust/)
 - [Design of Pin](https://without.boats/blog/pin/)
 - [Graydon Hoare, "The Rust I wanted had no future"](https://graydon2.dreamwidth.org/307291.html)
 - [Mara Bos, "Rust Atomics and Locks"](https://marabos.nl/atomics/)
+- [Rust releases at a glance](https://releases.rs/)
 
 
 ## Web
