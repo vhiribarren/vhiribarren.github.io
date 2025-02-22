@@ -1,9 +1,8 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
 import "@astrojs/starlight/style/markdown.css"
 
 const { lang  } = Astro.props;
-const { publishDate, updateDate } = Astro.props.entry.data;
+const { publishDate, updateDate } = Astro.locals.starlightRoute.entry.data;
 ---
 
 { (publishDate || updateDate) &&
