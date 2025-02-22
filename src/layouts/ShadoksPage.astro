@@ -1,0 +1,59 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import title_img from '../assets/shadoks/img/titre2.gif';
+const { title, headings, hasSidebar=true, tableOfContents=true } = Astro.props;
+---
+
+<style>
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #262600 !important;
+	--sl-color-accent: #6f6f00 !important;
+	--sl-color-accent-high: #ccce89 !important;
+	--sl-color-white: #ffffff !important;
+	--sl-color-gray-1: #f7f0be !important;
+	--sl-color-gray-2: #d4ca8d !important;
+	--sl-color-gray-3: #b7a400 !important;
+	--sl-color-gray-4: #645900 !important;
+	--sl-color-gray-5: #413900 !important;
+	--sl-color-gray-6: #2d2700 !important;
+	--sl-color-black: #1d1800 !important;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #d9dba8  !important;
+	--sl-color-accent: #525200  !important;
+	--sl-color-accent-high: #353500  !important;
+	--sl-color-white: #1d1800  !important;
+	--sl-color-gray-1: #2d2700  !important;
+	--sl-color-gray-2: #413900 !important;
+	--sl-color-gray-3: #645900 !important;
+	--sl-color-gray-4: #9e8d00 !important;
+	--sl-color-gray-5: #cdc486 !important;
+	--sl-color-gray-6: #f7f0be !important;
+	--sl-color-gray-7: #fbf7df !important;
+	--sl-color-black: #f7f0be !important;
+}
+</style>
+
+
+<StarlightPage
+	frontmatter={{ title, tableOfContents, hero: {image: {file: title_img, alt: "Le Goulp"} }}}
+	lang='fr-FR'
+	headings={headings}
+	hasSidebar={hasSidebar}
+	sidebar={[
+		{ label: 'Site principal', link: '/' },
+		{ label: 'Les Shadoks - Le Goulp', collapsed: false, items: [
+			{ label: 'Présentation', link: '/shadoks' },
+			{ label: 'Visionner', link: '/shadoks/visionner' },
+			{ label: 'Devises', link: '/shadoks/devises' },
+			{ label: 'Science', link: '/shadoks/science' },
+			{ label: 'Fan Fiction', link: '/shadoks/fanfic' },
+			{ label: 'Scripts', link: '/shadoks/scripts' },
+			{ label: 'Dictionnaire', link: '/shadoks/dictio' },
+		]},
+    	{ label: 'Formulaire de contact', link: '/contact' },
+	]}>
+    <slot />
+</StarlightPage>

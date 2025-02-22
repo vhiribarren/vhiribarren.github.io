@@ -64,6 +64,7 @@ export default defineConfig({
 				},
 				*/
 				{ label: 'Sketches', link: '/sketches/' },
+				{ label: 'Les Shadoks 🇫🇷', link: '/shadoks' },
 				{ slug: 'bookmarks' },
 				//{ slug: 'curriculum' },
 				{ slug: 'contact' },

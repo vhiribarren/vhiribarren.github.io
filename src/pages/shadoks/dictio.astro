@@ -1,0 +1,176 @@
+---
+import { Image } from 'astro:assets';
+import ShadoksPage from '../../layouts/ShadoksPage.astro';
+import img_ga from '../../assets/shadoks/img/ga.gif';
+import img_bu from '../../assets/shadoks/img/bu.gif';
+import img_zo from '../../assets/shadoks/img/zo.gif';
+import img_meu from '../../assets/shadoks/img/meu.gif';
+---
+
+<style>
+	dl {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+	}
+
+	dt, dd {
+		margin: 0;
+		padding: 0.5em;
+		display: flex;
+		align-items: center;
+	}
+
+	dt {
+		flex-basis: 30%;
+		font-weight: bold;
+	}
+
+	dd {
+		flex-basis: 70%;
+	}
+</style>
+
+<ShadoksPage
+	title="Dictionnaire Shadok-Français"
+    headings={[
+        { depth: 2, slug: "ga", text: "Ga" },
+        { depth: 2, slug: "bu", text: "Bu" },
+        { depth: 2, slug: "zo", text: "Zo"},
+		{ depth: 2, slug: "meu", text: "Meu"},
+    ]}>
+
+A partir des 4 séries des Shadoks, et en extrapolant un peu, je vous ai concocté
+un petit dictionnaire Français-Shadok de Ga à Bu, car rappelons le,
+Ga, Bu, Zo et Meu sont les seules "lettres" des shadoks.
+
+<Image src={img_ga} alt="Ga" id="ga" />
+
+<dl class="not-content">
+	<dt>Ga</dt><dd>Avancer</dd>
+	<dt>Ga</dt><dd>Casserole</dd>
+	<dt>Ga</dt><dd>Chameau</dd>
+	<dt>Ga</dt><dd>Clou</dd>
+	<dt>Ga</dt><dd>Egalité</dd>
+	<dt>Ga</dt><dd>Famille d'entonnoirs à ressort</dd>
+	<dt>Ga</dt><dd>Flacon</dd>
+	<dt>Ga</dt><dd>Fraternité</dd>
+	<dt>Ga</dt><dd>Gauche</dd>
+	<dt>Ga</dt><dd>Haut de forme</dd>
+	<dt>Ga</dt><dd>Intérieur</dd>
+	<dt>Ga</dt><dd>Liberté</dd>
+	<dt>Ga</dt><dd>Moi</dd>
+	<dt>Ga</dt><dd>Passoire</dd>
+	<dt>Ga</dt><dd>Parapluie</dd>
+	<dt>Ga</dt><dd>Pinces à linge</dd>
+	<dt>Ga</dt><dd>Ressort</dd>
+	<dt>Ga</dt><dd>Réveil</dd>
+	<dt>Ga</dt><dd>Tour Eiffel</dd>
+	<dt>Ga</dt><dd>Trois moulins à café (plus ou moins cousins germains)</dd>
+	<dt>Ga</dt><dd>Tuyau de poêle</dd>
+	<dt>Ga</dt><dd>Vélo</dd>
+	<dt>GaGa</dt><dd>Toi</dd>
+	<dt>GaGaGa</dt><dd>Espèce d'imbécile</dd>
+	<dt>GaBu</dt><dd>Notion</dd>
+	<dt>GaZoMeu</dt><dd>Casserole</dd>
+	<dt>GaZoMeuGa</dt><dd>Casserole avec manche à gauche</dd>
+	<dt>GaZoMeuBu</dt><dd>Casserole avec manche à droite</dd>
+	<dt>GaZoMeuMeu</dt><dd>Casserole sans manche. Syn : Zo Zo Bu : autobus</dd>
+</dl>
+
+<h4>Expressions</h4>
+
+<dl	class="not-content">
+	<dt>GaZoGaZoGaBu ZoBuMeuMeuBuZo</dt><dd>Il faut pomper pour vivre donc il faut vivre pour pomper</dd>
+	<dt>GaZoBuZoMeuZoBu</dt><dd>S'il n'y a pas de solution, c'est qu'il n'y a pas de problème.</dd>
+	<dt>GaBuGaZoMeuBu</dt><dd>Je pompe, donc je suis.</dd>
+	<dt>GaBuZoZo</dt><dd>Pourquoi faire simple quand on peut faire compliqué ?</dd>
+	<dt>GaMeu</dt><dd>Que la nuit soit.</dd>
+	<dt>GaBuZo</dt><dd>A nos hardis marins perdus dans le cosmos</dd>
+	<dt>GaBuZo</dt><dd>Tout ce qui n'est pas explicitement autorisé est strictement interdit.</dd>
+	<dt>GaBu</dt><dd>Pour une oreille bien exercée, il n'y a pas de bruit qui ne puisse être entendu comme une musique.</dd>
+	<dt>GaZo</dt><dd>C'est en forgeant que l'on devient musicien.</dd>
+	<dt>GaZo</dt><dd>Que la terre se couvre d'arbres, de fruits et légumes, de citrouilles, et de pissenlits.</dd>
+	<dt>GaGa</dt><dd>Ca va ?</dd>
+	<dt>GaGa</dt><dd>Non, ça va.</dd>
+	<dt>GaGa</dt><dd>J'en suis bien content pour vous.</dd>
+	<dt>GaGa GaGaGa</dt><dd>Imbécile, espèce de menteur</dd>
+</dl>
+
+<Image src={img_bu} alt="Bu" id="bu"/>
+
+
+<dl	class="not-content">
+	<dt>Bu</dt><dd>Bouteille</dd>
+	<dt>Bu</dt><dd>Droite</dd>
+	<dt>Bu</dt><dd>Eau</dd>
+	<dt>Bu</dt><dd>Livre</dd>
+	<dt>Bu</dt><dd>Marteau</dd>
+	<dt>Bu</dt><dd>Petite peau pélicoïdale à roulettes</dd>
+	<dt>Bu</dt><dd>Tambour</dd>
+	<dt>BuBu</dt><dd>Oui</dd>
+	<dt>BuGa</dt><dd>Terre</dd>
+	<dt>BuBu</dt><dd>Mer</dd>
+</dl>
+
+<h4>Expressions</h4>
+
+<dl	class="not-content">
+	<dt>BuGaZo</dt><dd>Il faut pomper pour vivre, donc il faut vivre pour pomper.</dd>
+</dl>
+
+<Image src={img_zo} alt="Zo" id="zo"/>
+
+<dl	class="not-content">
+	<dt>Zo</dt><dd>Arbre</dd>
+	<dt>Zo</dt><dd>Bouquet (de fleurs)</dd>
+	<dt>Zo</dt><dd>Chapeau</dd>
+	<dt>Zo</dt><dd>Extérieur</dd>
+	<dt>Zo</dt><dd>Moulin à café</dd>
+	<dt>Zo</dt><dd>Nouilles</dd>
+	<dt>Zo</dt><dd>Pichet</dd>
+	<dt>Zo</dt><dd>Reculer</dd>
+	<dt>Zo</dt><dd>Vase</dd>
+	<dt>Zo</dt><dd>Vide</dd>
+	<dt>ZoZo</dt><dd>Indépendant</dd>
+	<dt>ZoZoBu</dt><dd>Autobus</dd>
+	<dt>ZoZoBuGa</dt><dd>Autobus allant à gauche</dd>
+	<dt>ZoZoBuBu</dt><dd>Autobus allant à droite</dd>
+	<dt>ZoZoBuMeu</dt><dd>Autobus ne marchant ni dans un sens, ni dans l'autre. Syn : GaZoMeu : casserole</dd>
+	<dt>ZoZo</dt><dd>Diamètre des nouilles</dd>
+</dl>
+
+<Image src={img_meu} alt="Meu" id="meu"/>
+
+<dl	class="not-content">
+	<dt>Meu</dt><dd>Bec de gaz</dd>
+	<dt>Meu</dt><dd>Brouette</dd>
+	<dt>Meu</dt><dd>Fond de l'eau</dd>
+	<dt>Meu</dt><dd>Fusée</dd>
+	<dt>Meu</dt><dd>Milieu</dd>
+	<dt>Meu</dt><dd>Montagne</dd>
+	<dt>Meu</dt><dd>Robinet</dd>
+	<dt>Meu</dt><dd>Trompette</dd>
+	<dt>Meu</dt><dd>Trou</dd>
+	<dt>MeuMeu</dt><dd>Diamètre des nouilles</dd>
+	<dt>MeuMeuMeuMeu</dt><dd>La fin de la fin de la fin</dd>
+	<dt>MeuMeuMeuMeuMeu</dt><dd>Fin</dd>
+</dl>
+
+<h4>Expressions</h4>
+
+<dl	class="not-content">
+	<dt>MeuGaGa MeuBuBu</dt><dd>oh là là, oh là là là là !</dd>
+</dl>
+
+<h4>Chanson populaire</h4>
+
+<dl	class="not-content">
+	<dt>Meu Meu Ga Meu</dt><dd>Frère Jacque</dd>
+	<dt>Zo Zo Bu</dt><dd>Dormez-vous ?</dd>
+	<dt>Ga Ga Zo Bu Bu Bu</dt><dd>Sonnez les matines</dd>
+	<dt>Ga Bu Zo</dt><dd>Ding, deng, dong</dd>
+</dl>
+
+
+</ShadoksPage>

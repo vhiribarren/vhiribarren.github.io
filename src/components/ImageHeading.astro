@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+
+const { src, alt, text, slug } = Astro.props;
+---
+
+<section style="display: flex; align-items: flex-end; gap: 10px;">
+  <Image src={src} alt={alt} />
+  <h2 id={slug}>{text}</h2>
+</section>

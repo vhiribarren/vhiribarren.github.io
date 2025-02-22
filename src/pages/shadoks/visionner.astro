@@ -1,0 +1,58 @@
+---
+import ShadoksPage from "../../layouts/ShadoksPage.astro";
+import { Aside } from "@astrojs/starlight/components";
+---
+
+
+
+<ShadoksPage
+    title="Visionner"
+    headings={[
+        { depth: 2, slug: "saison-1", text: "Saison 1" },
+        { depth: 2, slug: "saison-2", text: "Saison 2" },
+        { depth: 2, slug: "saison-3", text: "Saison 3" },
+    ]}>
+
+<Aside>Liens valides au 1er janvier 2025.</Aside>
+
+<h2 id="saison-1">Saison 1</h2>
+
+<div class="not-content" style="display: flex; justify-content: center;">
+    <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/tpD0Pdr7oD0?si=RV_rHct2dm46Vpc_"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2 id="saison-2">Saison 2</h2>
+
+<div class="not-content" style="display: flex; justify-content: center;">
+    <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/Dk1JjjbZ4yc?si=LiGmpf6HuyGWiW9S"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2 id="saison-3">Saison 3</h2>
+
+<div class="not-content" style="display: flex; justify-content: center;">
+    <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/m8cfXGQTWBU?si=o6m7j7arSG_UUsBw"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+</ShadoksPage>

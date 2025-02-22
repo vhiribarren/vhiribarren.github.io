@@ -1,0 +1,66 @@
+---
+import ShadoksPage from "../../layouts/ShadoksPage.astro";
+import ImageHeading from "../../components/ImageHeading.astro";
+import devin_img from "../../assets/shadoks/img/devin.gif";
+import marin_img from "../../assets/shadoks/img/marin.gif";
+import passoire_img from "../../assets/shadoks/img/passoire.gif";
+---
+
+
+
+<ShadoksPage
+    title="Devises"
+    headings={[
+        { depth: 2, slug: "logique-shadok", text: "Logique shadok" },
+        { depth: 2, slug: "les-maximes-du-marin-shadok", text: "Les maximes du marin shadok" },
+        { depth: 2, slug: "divers-et-pompologie", text: "Divers et pompologie" }
+    ]}>
+
+
+<ImageHeading src={devin_img} alt="Devin Plombier" text="Logique shadok" slug="logique-shadok" />
+
+<ul>
+    <li>Ce n'est qu'en essayant continuellement que l'on fini par réussir.
+    <li>Plus ça rate, et plus ça a de chance que ça marche.
+    <li>Pourquoi faire simple quand on peut faire compliqué ?
+    <li>Plus un ordinateur va vite, plus il donne de bons résultats.
+    <li>Pour guérir quelquechose qui ne marche pas ou qui fait trop de bruit, il faut et il suffit de taper dessus avec quelquechose qui marche mieux ou qui fait plus de bruits.
+    <li>La ligne droite est le plus long chemin d'un point à un autre.
+    <li>Tout ce qui n'est pas explicitement autorisé est strictement interdit.
+</ul>
+
+
+<ImageHeading src={marin_img} alt="Marin Shadok" text="Les maximes du marin shadok" slug="les-maximes-du-marin-shadok" />
+
+<ul>
+    <li>Dans la marine, on ne fait pas grand chose, mais on le fait de bonne heure.
+    <li>Dans la marine, c'est un principe : il faut saluer tout ce qui bouge, et peindre le reste.
+    <li>Il est beaucoup plus intéressant de regarder où on ne va pas, pour la bonne raison que là où on va, il sera toujours tant d'y regarder quand on y sera.
+    <li>Dans la marine, c'est un principe, quand on ne sait pas où on va, il faut y aller, et le plus vite possible.
+    <li>Dans la marine, c'est un principe, pour qu'il y ait le moins de mécontents possibles, il faut toujours taper sur les mêmes.
+    <li>C'est encore dans la marine qu'il y a le plus de marins.
+    <li>La marine, c'est pas un vélo.
+    <li>S'il n'y a pas de solution, c'est qu'il n'y a pas de problème.
+</ul>
+
+<ImageHeading src={passoire_img} alt="Passoire" text="Divers et pompologie" slug="divers-et-pompologie" />
+
+<ul>
+    <li>Une place pour chaque chose, et chaque chose à sa place
+    <li>Pour une oreille bien exercée, il n'y a pas de bruit qui ne puisse être entendu comme une musique. Et réciproquement.
+    <li>Les enfants de shadoks, ça pompe, ou ça n'existe pas.
+    <li>Ce n'est qu'en pompant que l'on arrive à quelque chose, et même si l'on n'y arrive pas, ça ne peut pas faire de mal.
+    <li>Il faut pomper pour vivre, donc il faut vivre pour pomper.
+    <li>Un shadok mort est un shadok qui ne pompe pas, donc un shadok qui ne pompe pas est un shadok mort.
+    <li>Il vaut mieux pomper d'arrache pied même s'il ne se passe rien, plutôt que de risquer qu'il se passe quelque chose de pire en ne pompant pas.
+    <li>A force de taper dans rien, il finit toujours par en sortir quelque chose. Et réciproquement.
+    <li>La culture, c'est ce qui reste quand on a tout oublié.
+    <li>Les shadoks, ça ne sert à rien (dixit l'Ordinateur).
+    <li>La vieillesse est une maladie comme les autres. La preuve : on peut en mourir.
+    <li>La plus grave maladie du cerveau, c'est de réfléchir.
+    <li>Je pompe, donc je suis. Et réciproquement, je suis, donc je pompe.
+    <li>Tout ce qui va arriver peut et doit être prévu. Réciproquement, tout ce qui a été prévu doit obligatoirement arriver.
+    <li>On n'est jamais mieux battu que par soi-même.
+</ul>
+
+</ShadoksPage>
