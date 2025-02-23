@@ -64,8 +64,11 @@ export default defineConfig({
 				},
 				*/
 				{ label: 'Sketches', link: '/sketches/' },
-				{ label: 'Les Shadoks 🇫🇷', link: '/shadoks' },
 				{ slug: 'bookmarks' },
+				{ label: 'French Corner 🇫🇷', collapsed: true, items: [
+					{ label: 'Les Shadoks - Le Goulp', link: '/shadoks', attrs: { class: 'large' }, },
+					{ label: 'Compositions', collapsed: true, autogenerate: { directory: 'compositions' } },
+				]},
 				//{ slug: 'curriculum' },
 				{ slug: 'contact' },
 			],
