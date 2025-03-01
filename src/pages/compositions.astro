@@ -1,0 +1,49 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('docs', ({ id }) => {
+  return id.startsWith('compositions/');
+});
+const articles = allArticles.filter(article => article.data.draft === false);
+articles.sort((left, right) => {
+  const leftDate = left.data.publishDate ?? (left.data.lastUpdated instanceof Date ? left.data.lastUpdated as Date:  new Date(0));
+  const rightDate = right.data.publishDate ?? (right.data.lastUpdated instanceof Date ? right.data.lastUpdated as Date:  new Date(0));
+  return rightDate.getTime() - leftDate.getTime() ;
+})
+---
+
+<style>
+  a {text-decoration: none;}
+</style>
+
+<StarlightPage frontmatter={{ title: 'Compositions', tableOfContents: false }} lang='fr-FR'>
+  <table>
+    <thead>
+      <th>Published</th>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      {articles.map((article: any) => (
+        <tr>
+          <td>
+            { article.data.publishDate &&
+                <time datetime={article.data.publishDate.toISOString()}>
+                  {article.data.publishDate.toDateString()}
+                </time>
+            }
+          </td>
+          <td>
+            <a href={`/${article.id}`}>{article.data.title}</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+
+  <ul>
+
+  </ul>
+
+</StarlightPage>
