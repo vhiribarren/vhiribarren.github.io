@@ -1,40 +1,30 @@
 ---
 const { title, year } = Astro.props;
+import { Image } from "astro:assets";
+import byNcNdCc from "../assets/by-nc-nd.svg";
 ---
 
-<p>
-    <span property="dct:title">{title} © {year}</span> by
-        <a
-            rel="cc:attributionURL dct:creator"
-            property="cc:attributionName"
-            href="https://www.alea.net">Vincent Hiribarren</a> is licensed under
-        <a
-            href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
-            target="_blank"
-            rel="license noopener noreferrer"
-            style="display:inline-block;"
-            class="not-content">
-        Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-        International
-        <img
-            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
-            alt=""
-        />
-        <img
-            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-            src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
-            alt=""
-        />
-        <img
-            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
-            alt=""
-        />
-        <img
-            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-            src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"
-            alt=""
-        />
-    </a>
-</p>
+<div>
+    <div>
+        <span property="dct:title">{title} © {year}</span> by
+        <a rel="cc:attributionURL dct:creator"
+           property="cc:attributionName"
+           href="https://www.alea.net">Vincent Hiribarren</a> is licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"
+           target="_blank"
+           rel="license noopener noreferrer"
+           style="display:inline-block;"
+           class="not-content">
+           Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a>
+    </div>
+    <div style="text-align: center;">
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"
+           target="_blank"
+           rel="license noopener noreferrer"
+           style="display:inline-block;"
+           class="not-content">
+         <Image
+             src={byNcNdCc}
+             alt="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"/></a>
+    </div>
+</div>

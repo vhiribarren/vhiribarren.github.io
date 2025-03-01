@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+const { src, alt, width, height } = Astro.props;
+---
+
+<style>
+    .blurred-edges {
+        --fade-strength: 20%;
+        border-radius: 50px;
+        mask-composite: intersect;
+        mask-image: linear-gradient(
+                to top,
+                transparent,
+                black var(--fade-strength),
+                black calc(100% - var(--fade-strength)),
+                transparent
+            ),
+            linear-gradient(
+                to left,
+                transparent,
+                black var(--fade-strength),
+                black calc(100% - var(--fade-strength)),
+                transparent
+            ),
+            radial-gradient(
+                black,
+                black calc(100% - var(--fade-strength)),
+                transparent
+            );
+
+    }
+</style>
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+    <Image
+        src={src}
+        width={width}
+        height={height}
+        alt={alt}
+        class="blurred-edges"
+        title={alt}
+    />
+</div>

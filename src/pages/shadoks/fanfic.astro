@@ -1,6 +1,7 @@
 ---
 import { Aside } from "@astrojs/starlight/components";
 import ShadoksPage from "../../layouts/ShadoksPage.astro";
+import ByNcDcCc from '../../components/ByNcNdCc.astro';
 ---
 
 <style>
@@ -10,7 +11,6 @@ import ShadoksPage from "../../layouts/ShadoksPage.astro";
 </style>
 
 <ShadoksPage title="Fan Fiction" tableOfContents={false}>
-
     <Aside type="caution" title="Propriété intellectuelle">
         Ce texte est une production personnelle dont je suis particulièrement
         fier. A cet égard, merci de ne pas le réutiliser sans mon autorisation.
@@ -71,33 +71,6 @@ import ShadoksPage from "../../layouts/ShadoksPage.astro";
         <p>C'est tout pour aujourd'hui !</p>
     </blockquote>
 
-<p>
-    <a property="dct:title" rel="cc:attributionURL" href="https://www.alea.net/shadoks/fanfic">Au vote!</a>
-    par <span property="cc:attributionName">Vincent Hiribarren</span> est licensié sous
-    <a
-        href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
-        target="_blank"
-        rel="license noopener noreferrer"
-        style="display:inline-block;"
-        class="not-content">
-        Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
-            <img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
-                alt=""/>
-            <img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
-                alt=""/>
-            <img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
-                alt=""/>
-            <img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"
-                alt=""/>
-    </a>
-</p>
+    <ByNcDcCc title="Au vote!" year="2006" />
 
 </ShadoksPage>
