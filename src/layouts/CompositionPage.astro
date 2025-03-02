@@ -1,0 +1,20 @@
+---
+import ByNcDcCc from '../components/ByNcNdCc.astro';
+import CenteredBlurryImage from '../components/CenteredBlurryImage.astro';
+import Composition from '../components/Composition.astro';
+
+const { imageTitle, imageSrc } = Astro.props;
+const { title, publishDate } = Astro.locals.starlightRoute.entry.data;
+
+---
+
+
+{ imageSrc &&
+<CenteredBlurryImage alt={imageTitle} src={imageSrc} height={400}/>
+}
+
+<Composition>
+    <slot />
+</Composition>
+
+<ByNcDcCc title={title} year={publishDate?.getFullYear()} />

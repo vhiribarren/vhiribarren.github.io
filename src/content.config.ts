@@ -8,6 +8,7 @@ const docCollection = defineCollection({
 		extend: z.object({
 			publishDate: z.date().optional(),
 			updateDate: z.date().optional(),
+			displayPublishDate: z.boolean().default(true).optional(),
 		})
 	  })
 });
