@@ -1,5 +1,4 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
 import "@astrojs/starlight/style/markdown.css"
 import EditLink from '@astrojs/starlight/components/EditLink.astro';
 import LastUpdated from '@astrojs/starlight/components/LastUpdated.astro';
@@ -9,10 +8,10 @@ import Pagination from '@astrojs/starlight/components/Pagination.astro';
 
 <footer class="sl-flex">
 	<div class="meta sl-flex">
-		<EditLink {...Astro.props} />
-		<LastUpdated {...Astro.props} />
+		<EditLink />
+		<LastUpdated />
 	</div>
-	<Pagination {...Astro.props} />
+	<Pagination />
 	<p class="kudos sl-flex sl-markdown-content">© Vincent Hiribarren - <a href="/legal">Legal information</a></p>
 </footer>
 
