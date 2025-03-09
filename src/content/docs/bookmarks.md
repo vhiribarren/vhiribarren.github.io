@@ -63,7 +63,9 @@ Links I do not want to forget and I find interesting to share.
 - [Graydon Hoare, "The Rust I wanted had no future"](https://graydon2.dreamwidth.org/307291.html)
 - [Mara Bos, "Rust Atomics and Locks"](https://marabos.nl/atomics/)
 - [Rust releases at a glance](https://releases.rs/)
-
+- [The Little Book of Rust Macros](https://veykril.github.io/tlborm/)
+- [An unofficial guide to the Rust ecosystem](https://blessed.rs/)
+- [Learn Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/)
 
 ## Web
 
