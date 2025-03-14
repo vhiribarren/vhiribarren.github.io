@@ -57,6 +57,7 @@ Links I do not want to forget and I find interesting to share.
 - [Common Rust lifetime misconception](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md)
 - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md)
 - [Tour of Rust's standard library traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md)
+- [Rust Language Cheat Sheet](https://cheats.rs/)
 - [Object soup is made of indexes](https://jacko.io/object_soup.html)
 - [Why Async Rust?](https://without.boats/blog/why-async-rust/)
 - [Design of Pin](https://without.boats/blog/pin/)
