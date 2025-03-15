@@ -58,6 +58,7 @@ Links I do not want to forget and I find interesting to share.
 - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md)
 - [Tour of Rust's standard library traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md)
 - [Rust Language Cheat Sheet](https://cheats.rs/)
+- [Learning Rust](https://quinedot.github.io/rust-learning/)
 - [Object soup is made of indexes](https://jacko.io/object_soup.html)
 - [Why Async Rust?](https://without.boats/blog/why-async-rust/)
 - [Design of Pin](https://without.boats/blog/pin/)
