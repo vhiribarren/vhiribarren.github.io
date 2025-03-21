@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkDirective from 'remark-directive';
 import {mdZoomableImageDirectivePlugin} from './src/plugins/remark-zoomable-image.ts'
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +22,14 @@ export default defineConfig({
 		remarkPlugins: [remarkDirective, mdZoomableImageDirectivePlugin]
 	},
 	integrations: [
+		sitemap({
+			customPages: [
+				'https://www.alea.net/game-of-life-rust-bevy/',
+				'https://www.alea.net/raytracer-rust/',
+				'https://www.alea.net/vector-field-effects-js/',
+				'https://www.alea.net/sketch-book/'
+			]
+		}),
 		starlight({
 			title: 'alea.net workshop',
 			plugins: [],
