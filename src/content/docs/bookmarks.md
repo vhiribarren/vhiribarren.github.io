@@ -22,7 +22,7 @@ Links I do not want to forget and I find interesting to share.
 
 ### Essays
 - [Programming as Theory building](https://gist.github.com/onlurking/fc5c81d18cfce9ff81bc968a7f342fb1) - by Peter Naur
-
+- [Programming as Theory Building: Why Senior Developers Are More Valuable Than Ever](https://cekrem.github.io/posts/programming-as-theory-building-naur/)
 
 ## Programming languages
 
@@ -97,8 +97,8 @@ Links I do not want to forget and I find interesting to share.
 
 ## Project management
 
--  [Diátaxis framework](https://diataxis.fr/) - How to write clear documentation 
-
+- [Diátaxis framework](https://diataxis.fr/) - How to write clear documentation 
+- [Architecture Decision Records](https://adr.github.io/) - Promote writing ADR
 
 ## Algorithms
 
