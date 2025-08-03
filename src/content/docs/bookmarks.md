@@ -111,6 +111,11 @@ Links I do not want to forget and I find interesting to share.
 - [Electronics Club](https://electronicsclub.info/)
 - [BBC Microbit](https://tech.microbit.org/) - Cortex-M board with a nRF52833 chip
 
+## Radio
+
+- [Short Wave Radio Frequency Schedule](https://www.short-wave.info/)
+- [Learn CW online](https://lcwo.net/)
+
 ## Mathematics
 
 - [Category Theory](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Bartosz Milewski
