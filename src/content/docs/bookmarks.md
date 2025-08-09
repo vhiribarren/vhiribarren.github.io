@@ -72,8 +72,12 @@ Links I do not want to forget and I find interesting to share.
 ## Web
 
 - [State of JavaScript](https://stateofjs.com/)
-- [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
 - [List of static site generators](https://jamstack.org/generators/)
+
+## Humor
+
+- [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
+- [A Brief, Incomplete, and Mostly Wrong History of Programming Languages](https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html)
 
 
 ## Fluid simulation
