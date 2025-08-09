@@ -40,6 +40,10 @@ Links I do not want to forget and I find interesting to share.
 - [State of the Octoverse](https://octoverse.github.com/) - Based on activity on GitHub
 - [PL Rank](https://plrank.com/) - Based on aggregation of other programming language rankings
 
+### Humor
+- [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
+- [A Brief, Incomplete, and Mostly Wrong History of Programming Languages](https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html)
+
 
 ## Computer Graphics
 
@@ -69,15 +73,11 @@ Links I do not want to forget and I find interesting to share.
 - [An unofficial guide to the Rust ecosystem](https://blessed.rs/)
 - [Learn Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/)
 
+
 ## Web
 
 - [State of JavaScript](https://stateofjs.com/)
 - [List of static site generators](https://jamstack.org/generators/)
-
-## Humor
-
-- [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
-- [A Brief, Incomplete, and Mostly Wrong History of Programming Languages](https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html)
 
 
 ## Fluid simulation
