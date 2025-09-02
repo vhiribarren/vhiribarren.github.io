@@ -122,7 +122,8 @@ Links I do not want to forget and I find interesting to share.
 
 ## Mathematics
 
-- [Category Theory](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Bartosz Milewski
+- [Category Theory (video)](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Bartosz Milewski
+- [Category Theory (text)](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) - Bartosz Milewski
 
 
 ## Japanese
