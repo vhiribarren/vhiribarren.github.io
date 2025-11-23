@@ -24,6 +24,9 @@ Links I do not want to forget and I find interesting to share.
 - [Programming as Theory building](https://gist.github.com/onlurking/fc5c81d18cfce9ff81bc968a7f342fb1) - by Peter Naur
 - [Programming as Theory Building: Why Senior Developers Are More Valuable Than Ever](https://cekrem.github.io/posts/programming-as-theory-building-naur/)
 
+### Misc
+- [Fonctionnement d'un ordinateur depuis zéro](http://sdz.tdct.org/sdz/fonctionnement-d-un-ordinateur-depuis-zero.html) - in French
+
 ## Programming languages
 
 ### Parsing
