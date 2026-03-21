@@ -9,6 +9,7 @@ const docCollection = defineCollection({
 			publishDate: z.date().optional(),
 			updateDate: z.date().optional(),
 			displayPublishDate: z.boolean().default(true).optional(),
+			wide: z.boolean().default(false).optional(),
 		})
 	  })
 });
