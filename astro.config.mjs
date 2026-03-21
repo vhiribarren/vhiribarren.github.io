@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkDirective from 'remark-directive';
-import {mdZoomableImageDirectivePlugin} from './src/plugins/remark-zoomable-image.ts'
+import { mdZoomableImageDirectivePlugin } from './src/plugins/remark-zoomable-image.ts'
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -33,7 +33,7 @@ export default defineConfig({
 		starlight({
 			title: 'alea.net workshop',
 			plugins: [],
-			logo: {src: './src/assets/hvct.svg'},
+			logo: { src: './src/assets/hvct.svg' },
 			pagination: false,
 			social: {
 				github: 'https://github.com/vhiribarren',
@@ -74,11 +74,13 @@ export default defineConfig({
 				*/
 				{ label: 'Sketches', link: '/sketches/' },
 				{ slug: 'bookmarks' },
-				{ label: 'French Corner 🇫🇷', collapsed: true, items: [
-					{ label: 'Les Shadoks - Le Goulp', link: '/shadoks', attrs: { class: 'large' }, },
-					{ label: 'Compositions', collapsed: true, autogenerate: { directory: 'compositions' } },
-				]},
-				//{ slug: 'curriculum' },
+				{
+					label: 'French Corner 🇫🇷', collapsed: true, items: [
+						{ label: 'Les Shadoks - Le Goulp', link: '/shadoks', attrs: { class: 'large' }, },
+						{ label: 'Compositions', collapsed: true, autogenerate: { directory: 'compositions' } },
+					]
+				},
+				{ slug: 'profile' },
 				{ slug: 'contact' },
 			],
 			customCss: [
