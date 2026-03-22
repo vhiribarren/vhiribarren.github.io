@@ -3,8 +3,8 @@ import "@astrojs/starlight/style/markdown.css"
 
 const { lang  } = Astro.props;
 const { entry } = Astro.locals.starlightRoute;
-const { publishDate, updateDate, displayPublishDate = true, wide } = entry.data;
-const isWide = !!wide;
+const { publishDate, updateDate, displayPublishDate = true, iframe } = entry.data;
+const isIframe = !!iframe;
 ---
 
 { (publishDate || updateDate) && displayPublishDate &&
@@ -25,12 +25,27 @@ const isWide = !!wide;
     </p>
 }
 
-{isWide && (
+{isIframe && (
     <style is:global>
         /* Increase width and set tiny 1rem padding for title and content panels */
         .main-pane .content-panel {
             --sl-content-width: 100% !important;
             padding-inline: 1rem !important;
+        }
+
+        /* Remove top padding on article panel so content starts right below the title border */
+        .main-pane .content-panel + .content-panel {
+            padding-block-start: 0 !important;
+        }
+
+        /* On mobile: remove side padding and top margin on the article panel */
+        @media (max-width: 50rem) {
+            .main-pane .content-panel + .content-panel {
+                padding-inline: 0 !important;
+            }
+            .main-pane .sl-markdown-content {
+                margin-block-start: 0 !important;
+            }
         }
 
         /* Ensure markdown content fills the available width */

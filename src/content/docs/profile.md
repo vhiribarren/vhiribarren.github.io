@@ -2,7 +2,7 @@
 title: Curriculum Vitae
 tableOfContents: false
 template: doc
-wide: true
+iframe: true
 ---
 
 <iframe
