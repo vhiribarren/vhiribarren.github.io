@@ -34,6 +34,14 @@ export default defineConfig({
 			title: 'alea.net workshop',
 			plugins: [],
 			logo: { src: './src/assets/hvct.svg' },
+			head: [{
+				tag: "script",
+				attrs: {
+					defer: true,
+					src: 'https://static.cloudflareinsights.com/beacon.min.js',
+					'data-cf-beacon': '{"token": "0611d3d60fe64ea7a4230b15f3baffe5"}'
+				}
+			}],
 			pagination: false,
 			social: {
 				github: 'https://github.com/vhiribarren',

@@ -21,6 +21,10 @@ preferences (like dark or light mode) in your web browser's local storage. This
 information is purely local to your computer and is never transmitted over the
 network.
 
+The site uses Cloudflare Web Analytics, an analytics service which does not use
+cookies and anonymise all collected data to have some statistics on the site
+usage.
+
 ## Third party licenses
 
 This web site is based on various open source projects. The one directly used
