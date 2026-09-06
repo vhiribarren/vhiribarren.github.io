@@ -121,6 +121,7 @@ Links I do not want to forget and I find interesting to share.
 ## Radio
 
 - [Short Wave Radio Frequency Schedule](https://www.short-wave.info/)
+- [WebSDR - Use a remote radio receiver](http://websdr.org/)
 - [Learn CW online](https://lcwo.net/)
 
 ## Mathematics
